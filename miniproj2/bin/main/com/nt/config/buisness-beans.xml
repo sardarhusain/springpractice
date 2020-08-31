@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="hkDs" class="com.zaxxer.hikari.HikariDataSource">
+<property name="driverClassName" value="${jdbc.driver}"/>
+        <property name="jdbcUrl" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.user}"/>
+        <property name="password" value="${jdbc.pwd}"/>
+        <!-- <property name="minimumIdle" value="${pool.minsize}"/>
+        <property name="maximumPoolSize" value="${pool.maxsize}"/>
+ --></bean>
+<bean id="dao" class="com.nt.dao.EmployeeDao" >
+<constructor-arg ref="hkDs"> </constructor-arg>
+</bean>
+<bean id="serivce" class="com.nt.Service.EmployeeserviceImpl" autowire="constructor"></bean>
+
+</beans>
