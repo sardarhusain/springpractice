@@ -15,7 +15,7 @@ public class MiniTest {
 		// TODO Auto-generated method stub
 		ApplicationContext pctx=null,cctx=null;
 		pctx= new ClassPathXmlApplicationContext("com/nt/config/buisness-beans.xml");
-		cctx= new ClassPathXmlApplicationContext(new String[]{"com/nt/config/presentaion-bean.xml"} ,pctx);
+		cctx= new ClassPathXmlApplicationContext(new String[]{"com/nt/config/presentation-bean.xml"} ,pctx);
 		Controller c = null;
 		List<EmployeeVo> vo= null;
 		System.out.println("================");
